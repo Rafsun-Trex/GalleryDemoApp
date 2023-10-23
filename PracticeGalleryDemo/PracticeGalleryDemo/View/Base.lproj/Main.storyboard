@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CqC-P5-5gu">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photos-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="HomeVC" customModule="PracticeGalleryDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3jC-yM-dHP">
+                                <rect key="frame" x="0.0" y="91" width="428" height="801"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Beh-dP-E5T">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Z0D-oW-7cn"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9t2-4w-WSc"/>
+                                    <outlet property="dragDelegate" destination="BYZ-38-t0r" id="v8Y-Am-gaI"/>
+                                    <outlet property="dropDelegate" destination="BYZ-38-t0r" id="qJ9-ux-2nn"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3jC-yM-dHP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K6Q-vM-enD"/>
+                            <constraint firstItem="3jC-yM-dHP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RyX-ss-pN9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3jC-yM-dHP" secondAttribute="bottom" id="TTP-YI-Leg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3jC-yM-dHP" secondAttribute="trailing" id="uD9-Bd-ztr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photos" id="qTg-E7-Xyj">
+                        <barButtonItem key="rightBarButtonItem" title="Import" image="plus" catalog="system" id="xLr-nJ-1r6">
+                            <connections>
+                                <action selector="btnImportImage:" destination="BYZ-38-t0r" id="UDi-GZ-jJ5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="photoCollectionView" destination="3jC-yM-dHP" id="P1P-rr-niL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028.2442748091603" y="3.5211267605633805"/>
+        </scene>
+        <!--Preview ImageVC-->
+        <scene sceneID="tVy-EE-405">
+            <objects>
+                <viewController storyboardIdentifier="ImageShowVC" id="ZeC-ne-sik" customClass="PreviewImageVC" customModule="PracticeGalleryDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rt2-t1-ubH">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s28-nQ-iUr">
+                                <rect key="frame" x="0.0" y="47" width="428" height="788"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kUH-La-Sbf">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZeC-ne-sik" id="Fwv-O0-nl6"/>
+                                    <outlet property="delegate" destination="ZeC-ne-sik" id="pOS-9K-HEb"/>
+                                </connections>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="N65-LB-2WL">
+                                <rect key="frame" x="0.0" y="802" width="428" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GP0-LT-NIO"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Cu-0p-a2k">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZeC-ne-sik" id="x1X-AM-XS7"/>
+                                    <outlet property="delegate" destination="ZeC-ne-sik" id="efz-Oo-GEW"/>
+                                </connections>
+                            </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90z-ko-dWX">
+                                <rect key="frame" x="0.0" y="852" width="428" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dUM-TT-cDY"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="Vpd-Ob-r7S">
+                                        <connections>
+                                            <action selector="btnShareToolBarAction:" destination="ZeC-ne-sik" id="vaM-jD-JnV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xXD-vA-asB"/>
+                                    <barButtonItem title="Delete" image="trash" catalog="system" id="Q6D-rI-skn">
+                                        <connections>
+                                            <action selector="btnDeleteToolBarAction:" destination="ZeC-ne-sik" id="W1R-5U-cAT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8DI-LP-6C7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="90z-ko-dWX" firstAttribute="top" secondItem="N65-LB-2WL" secondAttribute="bottom" id="0KW-0U-WeT"/>
+                            <constraint firstItem="s28-nQ-iUr" firstAttribute="top" secondItem="8DI-LP-6C7" secondAttribute="top" id="0Oi-jg-QJy"/>
+                            <constraint firstItem="N65-LB-2WL" firstAttribute="leading" secondItem="8DI-LP-6C7" secondAttribute="leading" id="1qj-lp-YhW"/>
+                            <constraint firstItem="90z-ko-dWX" firstAttribute="bottom" secondItem="8DI-LP-6C7" secondAttribute="bottom" id="3k0-aw-0VG"/>
+                            <constraint firstItem="90z-ko-dWX" firstAttribute="trailing" secondItem="8DI-LP-6C7" secondAttribute="trailing" id="6Ph-jd-8Mi"/>
+                            <constraint firstItem="N65-LB-2WL" firstAttribute="trailing" secondItem="8DI-LP-6C7" secondAttribute="trailing" id="7pN-qs-Fel"/>
+                            <constraint firstItem="s28-nQ-iUr" firstAttribute="leading" secondItem="8DI-LP-6C7" secondAttribute="leading" id="Alc-RD-lf4"/>
+                            <constraint firstItem="8DI-LP-6C7" firstAttribute="bottom" secondItem="s28-nQ-iUr" secondAttribute="bottom" constant="57" id="Sal-o9-l0j"/>
+                            <constraint firstItem="s28-nQ-iUr" firstAttribute="trailing" secondItem="8DI-LP-6C7" secondAttribute="trailing" id="URq-xT-liX"/>
+                            <constraint firstItem="90z-ko-dWX" firstAttribute="leading" secondItem="8DI-LP-6C7" secondAttribute="leading" id="cv1-xW-BUi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewCollectionView" destination="s28-nQ-iUr" id="ddJ-bZ-ry0"/>
+                        <outlet property="previewMiniCollectionView" destination="N65-LB-2WL" id="cLy-LF-5PN"/>
+                        <outlet property="toolBar" destination="90z-ko-dWX" id="rKT-CC-AvT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wpp-30-8fI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2025.700934579439" y="2.5917926565874732"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fdL-d9-Zq8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CqC-P5-5gu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n89-PN-6iP">
+                        <rect key="frame" x="0.0" y="47" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DPv-sZ-mRB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAZ-CD-XCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
